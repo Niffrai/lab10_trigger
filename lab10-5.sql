@@ -1,0 +1,5 @@
+CREATE TRIGGER tg_sum BEFORE INSERT ON sums FOR EACH ROW EXECUTE PROCEDURE calc_sum();
+\d sums
+
+INSERT INTO sums (a, b) VALUES (7, 8);
+SELECT * FROM sums;
